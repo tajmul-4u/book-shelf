@@ -3,13 +3,15 @@ import bookImage from '../../assets/books.jpg'
 
 const Banner = () => {
     return (
-      <div className='flex items-center p-16 justify-around w-full bg-gray-200 rounded-2xl'>
-        <div>
-          <h1 className='mb-4 text-6xl text-black'>Books are freshen up your bookshelf</h1>
-          <button className="btn btn-success">View the list</button>
-        </div>
-        <div>
-          <img className='w-6/12' src={bookImage} alt="" />
+      <div className="hero bg-base-200 rounded-3xl">
+        <div className="hero-content flex-col lg:flex-row-reverse">
+          <img src={bookImage} className="max-w-sm rounded-lg shadow-2xl" />
+          <div>
+            <h1 className="text-5xl font-bold mb-2.5">
+              Books to fresh up your bookshelf.
+            </h1>
+            <button className="btn btn-primary">View thr List</button>
+          </div>
         </div>
       </div>
     );

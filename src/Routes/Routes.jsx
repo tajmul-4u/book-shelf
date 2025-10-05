@@ -5,22 +5,31 @@ import Root from '../Pages/Roots/Root';
 import ErrorPages from '../Pages/ErrorPages/ErrorPages';
 import Home from '../Pages/Home/Home';
 import Navbar from '../Components/Navbar/Navbar';
+import About from '../Pages/About/About';
+import BookDetails from '../Pages/BooksDetails/BookDetails';
 
 export const router = createBrowserRouter([
   {
     path: "/",
     Component: Root,
-    errorElement:<ErrorPages></ErrorPages>,
+    errorElement: <ErrorPages></ErrorPages>,
 
-    children:[
-        {
-            index:true,
-            path:'/',
-            Component:Home,
-        
-            
-
-        }
-    ]
+    children: [
+      {
+        index: true,
+        loader: () => fetch("booksData.json"),
+        path: "/",
+        Component: Home,
+      },
+      {
+        path: "/about",
+        Component: About,
+      },
+      {
+        path: "/bookDetails/:id",
+        loader: () => fetch("booksData.json"),
+        Component: BookDetails,
+      },
+    ],
   },
 ]);
