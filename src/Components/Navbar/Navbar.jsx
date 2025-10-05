@@ -12,6 +12,8 @@ const Navbar = () => {
         <Link to={"/about"}>
           <li>About</li>
         </Link>
+         <Link to={"readList"}>
+         <li className='ml-5'>ReadList</li></Link>
       </>
     );
     

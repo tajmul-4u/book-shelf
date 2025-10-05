@@ -1,12 +1,13 @@
-import React from 'react';
+import React from "react";
 
 import { createBrowserRouter } from "react-router";
-import Root from '../Pages/Roots/Root';
-import ErrorPages from '../Pages/ErrorPages/ErrorPages';
-import Home from '../Pages/Home/Home';
-import Navbar from '../Components/Navbar/Navbar';
-import About from '../Pages/About/About';
-import BookDetails from '../Pages/BooksDetails/BookDetails';
+import Root from "../Pages/Roots/Root";
+import ErrorPages from "../Pages/ErrorPages/ErrorPages";
+import Home from "../Pages/Home/Home";
+import Navbar from "../Components/Navbar/Navbar";
+import About from "../Pages/About/About";
+import BookDetails from "../Pages/BooksDetails/BookDetails";
+import ReadList from "../Pages/ReadList/ReadList";
 
 export const router = createBrowserRouter([
   {
@@ -23,7 +24,12 @@ export const router = createBrowserRouter([
       },
       {
         path: "/about",
+        loader: () => fetch("booksData.json"),
         Component: About,
+      },
+      {
+        path: "readList",
+        Component: ReadList,
       },
       {
         path: "/bookDetails/:id",
